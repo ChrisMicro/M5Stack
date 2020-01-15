@@ -111,7 +111,7 @@ void loop(void)
   int x = FFT.MajorPeak(adcBuffer, SIGNAL_LENGTH, SAMPLINGFREQUENCY);
 
   int maxAmplitudeDB = 0;
-  for (n = 1; n < SIGNAL_LENGTH; n++)
+  for (n = 0; n < SIGNAL_LENGTH; n++)
   {
     int a = log10(adcBuffer[n]) * 20 - 54.186; // convert amplitude to dB scale, dB relative to log10(512samples)*20=54.186dB
     if (a > maxAmplitudeDB) maxAmplitudeDB = a;

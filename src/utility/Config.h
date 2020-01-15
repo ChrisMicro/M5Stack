@@ -20,9 +20,17 @@
 #define BUTTON_A 0
 #define BUTTON_B 1
 #define BUTTON_C 2
-#define BUTTON_A_PIN 39
-#define BUTTON_B_PIN 38
-#define BUTTON_C_PIN 37
+
+#ifdef ALTERNATIVEBUTTON
+ #define BUTTON_A_PIN 39
+ #define BUTTON_B_PIN 2
+ #define BUTTON_C_PIN 5
+ #pragma message("warning .. ALTERNATIVEBUTTON pin out")
+#else
+ #define BUTTON_A_PIN 39
+ #define BUTTON_B_PIN 38
+ #define BUTTON_C_PIN 37
+#endif
 
 // BEEP PIN
 #define SPEAKER_PIN 25

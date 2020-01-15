@@ -1,7 +1,15 @@
 // Change the width and height if required (defined in portrait mode)
 // or use the constructor to over-ride defaults
-#define TFT_WIDTH  240
-#define TFT_HEIGHT 320
+
+
+#ifdef ALTERNATIVEBUTTON
+ #define TFT_WIDTH  320
+ #define TFT_HEIGHT 240
+ #pragma message("warning .. ALTERNATIVEBUTTON display turned")
+#else
+ #define TFT_WIDTH  240
+ #define TFT_HEIGHT 320
+#endif
 
 
 // Color definitions for backwards compatibility with old sketches
